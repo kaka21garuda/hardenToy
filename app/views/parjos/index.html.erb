@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parjos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parjos.each do |parjo| %>
+      <tr>
+        <td><%= parjo.name %></td>
+        <td><%= parjo.email %></td>
+        <td><%= link_to 'Show', parjo %></td>
+        <td><%= link_to 'Edit', edit_parjo_path(parjo) %></td>
+        <td><%= link_to 'Destroy', parjo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parjo', new_parjo_path %>
